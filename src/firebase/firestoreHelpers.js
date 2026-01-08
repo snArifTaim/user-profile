@@ -35,7 +35,6 @@ export const updateUserProfile = async (userId, profileData) => {
             ...profileData,
             updatedAt: serverTimestamp()
         });
-        console.log('Profile updated successfully');
     } catch (error) {
         console.error('Error updating user profile:', error);
         throw error;
@@ -51,7 +50,6 @@ export const createUserProfile = async (userId, profileData) => {
             createdAt: serverTimestamp(),
             updatedAt: serverTimestamp()
         });
-        console.log('Profile created successfully');
     } catch (error) {
         console.error('Error creating user profile:', error);
         throw error;
@@ -66,7 +64,6 @@ export const createPost = async (postData) => {
             ...postData,
             createdAt: serverTimestamp()
         });
-        console.log('Post created with ID:', newPost.id);
         return newPost.id;
     } catch (error) {
         console.error('Error creating post:', error);
